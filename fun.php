@@ -1,6 +1,7 @@
 <?php
 require_once("include/bittorrent.php");
 dbconn();
+loggedinorreturn();
 require_once(get_langfile_path());
 require_once(get_langfile_path("",true));
 $action=$_GET["action"];
