@@ -54,7 +54,7 @@ else
 	begin_main_frame();
 
 	print("<h1 align=\"center\">".$lang_ipsearch['text_search_ip_history']."</h1>\n");
-	print("<form method=\"get\" action=\"".$_SERVER[PHP_SELF]."\">");
+	print("<form method=\"get\" action=\"\">");
 	print("<table align=center border=1 cellspacing=0 width=115 cellpadding=5>\n");
 	tr($lang_ipsearch['row_ip']."<font color=red>*</font>", "<input type=\"text\" name=\"ip\" size=\"40\" value=\"".htmlspecialchars($ip)."\" />", 1);
 	tr("<nobr>".$lang_ipsearch['row_subnet_mask']."</nobr>", "<input type=\"text\" name=\"mask\" size=\"40\" value=\"" . htmlspecialchars($mask) . "\" />", 1);
