@@ -99,7 +99,7 @@ else
 	}
 	$s .= "\n</select>";
 	?>
-	<form method="get" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+	<form method="get" action="">
 <?php
 	print("<div align=\"right\">".$lang_confirm_resend['text_select_lang']. $s . "</div>");
 ?>
