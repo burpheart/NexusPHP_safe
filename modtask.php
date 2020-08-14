@@ -25,7 +25,7 @@ if ($action == "confirmuser")
 }
 if ($action == "edituser")
 {
-	$userid = $_POST["userid"];
+	$userid = sqlesc($_POST["userid"]);
 	$class = 0 + $_POST["class"];
 	$vip_added = ($_POST["vip_added"] == 'yes' ? 'yes' : 'no');
 	$vip_until = ($_POST["vip_until"] ? $_POST["vip_until"] : '0000-00-00 00:00:00');
