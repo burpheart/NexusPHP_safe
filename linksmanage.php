@@ -98,7 +98,7 @@ if ($_POST['action'] == "editlink") {
 	$url = ($_POST['url']);
 	$title = ($_POST['title']);
 if (!$name && !$url && !$title) { header("Location: linksmanage.php"); die();}
-	sql_query("UPDATE links SET name = ".sqlesc($_POST['linkname']).", url = ".sqlesc($_POST['url']).", title = ".sqlesc($_POST['title'])." WHERE id = '".$_POST['id']."'") or sqlerr(__FILE__, __LINE__);
+	sql_query("UPDATE links SET name = ".sqlesc($_POST['linkname']).", url = ".sqlesc($_POST['url']).", title = ".sqlesc($_POST['title'])." WHERE id = '".sqlesc($_POST['id'])."'") or sqlerr(__FILE__, __LINE__);
 	$Cache->delete_value('links');
 header("Location: linksmanage.php");
 die();
