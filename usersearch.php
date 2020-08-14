@@ -37,8 +37,8 @@ if ($_GET['h'])
 }
 else
 {
-	echo "<p align=center>(<a href='".$_SERVER["PHP_SELF"]."?h=1'>Instructions</a>)";
-	echo "&nbsp;-&nbsp;(<a href='".$_SERVER["PHP_SELF"]."'>Reset</a>)</p>\n";
+	echo "<p align=center>(<a href='?h=1'>Instructions</a>)";
+	echo "&nbsp;-&nbsp;(<a href='?'>Reset</a>)</p>\n";
 }
 
 $highlight = " bgcolor=#BBAF9B";
