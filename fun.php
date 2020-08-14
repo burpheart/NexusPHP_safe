@@ -22,16 +22,15 @@ if ($action == 'delete')
 	if (get_user_class() < $funmanage_class)
 		permissiondenied();
 	$sure = 0+$_GET["sure"];
-	$returnto = $_GET["returnto"] ? htmlspecialchars($_GET["returnto"]) : htmlspecialchars($_SERVER["HTTP_REFERER"]);
+	//$returnto = $_GET["returnto"] ? htmlspecialchars($_GET["returnto"]) : htmlspecialchars($_SERVER["HTTP_REFERER"]);
 	if (!$sure)
-		stderr($lang_fun['std_delete_fun'],$lang_fun['text_please_click'] ."<a class=altlink href=?action=delete&id=$id&returnto=$returnto&sure=1>".$lang_fun['text_here_if_sure'],false);
+		stderr($lang_fun['std_delete_fun'],$lang_fun['text_please_click'] ."<a class=altlink href=?action=delete&id=$id&sure=1>".$lang_fun['text_here_if_sure'],false);
 	sql_query("DELETE FROM fun WHERE id=".sqlesc($id)) or sqlerr(__FILE__, __LINE__);
 	$Cache->delete_value('current_fun_content');
 	$Cache->delete_value('current_fun', true);
 	$Cache->delete_value('current_fun_vote_count');
 	$Cache->delete_value('current_fun_vote_funny_count');
-	if ($returnto != "")
-	header("Location: $returnto");
+	header("Location:". get_protocol_prefix() . "$BASEURL/fun.php");
 }
 if ($action == 'new')
 {
