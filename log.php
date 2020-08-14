@@ -32,8 +32,8 @@ function searchtable($title, $action, $opts = array()){
 		global $lang_log;
 		print("<table border=1 cellspacing=0 width=940 cellpadding=5>\n");
 		print("<tr><td class=colhead align=left>".$title."</td></tr>\n");
-		print("<tr><td class=toolbox align=left><form method=\"get\" action='" . $_SERVER['PHP_SELF'] . "'>\n");
-		print("<input type=\"text\" name=\"query\" style=\"width:500px\" value=\"".$_GET['query']."\">\n");
+		print("<tr><td class=toolbox align=left><form method=\"get\" action=''>\n");
+		print("<input type=\"text\" name=\"query\" style=\"width:500px\" value=\"".htmlspecialchars($_GET['query'])."\">\n");
 		if ($opts) {
 			print($lang_log['text_in']."<select name=search>");
 			foreach($opts as $value => $text)
@@ -49,7 +49,7 @@ function additem($title, $action){
 		global $lang_log;
 		print("<table border=1 cellspacing=0 width=940 cellpadding=5>\n");
 		print("<tr><td class=colhead align=left>".$title."</td></tr>\n");
-		print("<tr><td class=toolbox align=left><form method=\"post\" action='" . $_SERVER['PHP_SELF'] . "'>\n");
+		print("<tr><td class=toolbox align=left><form method=\"post\" action=''>\n");
 		print("<textarea name=\"txt\" style=\"width:500px\" rows=\"3\" >".$row["txt"]."</textarea>\n");
 		print("<input type=\"hidden\" name=\"action\" value=".$action.">");
 		print("<input type=\"hidden\" name=\"do\" value=\"add\">");
@@ -63,7 +63,7 @@ function edititem($title, $action, $id){
 		if ($row = mysql_fetch_array($result)) {
 		print("<table border=1 cellspacing=0 width=940 cellpadding=5>\n");
 		print("<tr><td class=colhead align=left>".$title."</td></tr>\n");
-		print("<tr><td class=toolbox align=left><form method=\"post\" action='" . $_SERVER['PHP_SELF'] . "'>\n");
+		print("<tr><td class=toolbox align=left><form method=\"post\" action=''>\n");
 		print("<textarea name=\"txt\" style=\"width:500px\" rows=\"3\" >".$row["txt"]."</textarea>\n");
 		print("<input type=\"hidden\" name=\"action\" value=".$action.">");
 		print("<input type=\"hidden\" name=\"do\" value=\"update\">");
