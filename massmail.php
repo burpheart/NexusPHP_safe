@@ -7,7 +7,7 @@ stderr("Error", "Permission denied.");
 $class = 0 + $_POST["class"];
 	if ($class)
 		int_check($class,true);
-$or = $_POST["or"];
+$or = sqlesc($_POST["or"]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
