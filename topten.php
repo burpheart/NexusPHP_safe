@@ -456,7 +456,7 @@ if (!in_array($type,array(1,2,3,4,5,6,7)))
 $type = 1;
 $limit = isset($_GET["lim"]) ? 0 + $_GET["lim"] : false;
 $subtype = isset($_GET["subtype"]) ? $_GET["subtype"] : false;
-
+int_check($limit,true);
 print("<p align=\"center\">"  .
 ($type == 1 && !$limit ? "<b>".$lang_topten['text_users']."</b>" : "<a href=\"topten.php?type=1\">".$lang_topten['text_users']."</a>") .	" | " .
 ($type == 2 && !$limit ? "<b>".$lang_topten['text_torrents']."</b>" : "<a href=\"topten.php?type=2\">".$lang_topten['text_torrents']."</a>") . " | " .
