@@ -7,8 +7,10 @@ stderr("Error", "Permission denied.");
 $class = 0 + $_POST["class"];
 	if ($class)
 		int_check($class,true);
-$or = sqlesc($_POST["or"]);
-
+$or = $_POST["or"];
+if (!in_array($or, ["<", ">", "=", "<=", ">="], true)) {
+        stderr("Error", "Invalid symbol!");
+    }
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 $res = sql_query("SELECT id, username, email FROM users WHERE class $or ".mysql_real_escape_string($class)) or sqlerr(__FILE__, __LINE__);
