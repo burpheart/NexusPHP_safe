@@ -1,3 +1,4 @@
+# Move to the official git repository [https://github.com/xiaomlove/nexusphp](https://github.com/xiaomlove/nexusphp)
 # ABOUT NexusPHP #
 This Project NexusPHP is an open-sourced private tracker script written in PHP.
 It forks from the TBSource project and some other open-sourced projects.
